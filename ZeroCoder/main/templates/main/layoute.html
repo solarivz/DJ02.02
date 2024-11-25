@@ -11,27 +11,16 @@
     {% block title %}{% endblock %}
 </head>
 <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="{% static 'main/img/cover.jpg' %}" alt="Django Fun!" width="40" class="me-2">
-                StartDjango
-            </a>
-            <div>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/new">Второстепенная</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Подключение меню -->
+    {% include 'main/menu.html' %}
+
+    <!-- Основной контент -->
     <main class="container mt-4">
         {% block content %}
         {% endblock %}
     </main>
+    <!-- Подключение подвала -->
+    {% include 'main/footer.html' %}
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
